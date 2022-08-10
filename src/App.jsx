@@ -84,7 +84,13 @@ function App() {
             <h4>Wind Speed: {weather?.wind?.speed} km/h</h4>
           </div>
         </div>
-        <h2 className="history-heading">Search History</h2>
+       <div className="history-header">
+          <h2 className="history-heading">Search History</h2>
+          <button onClick={()=>{
+            localStorage.removeItem("data");
+            setWeather({});
+          }}><i className="fa fa-trash"></i></button>
+       </div>
         <div className="search-history">
           {searchHistory.map((item, index) => (
             <div className="history-item" key={index}>

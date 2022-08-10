@@ -43,7 +43,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -156,11 +156,32 @@ button:focus-visible {
   
 }
 
+.history-header{
+  display: flex;
+  margin-top: 3rem;
+  justify-content: space-between;
+}
+
+.history-header button{
+  height: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.25s;
+  margin-left: .5rem;
+}
+
 .history-heading{
   font-size: 2.5rem;
   font-weight: 500;
   color: #fff;
-  margin-top: 3rem;
+ 
 }
 
 .history-item{
@@ -199,6 +220,16 @@ button:focus-visible {
 
   .history-item{
     width: 80%;
+  }
+
+  .history-header{
+    flex-direction: column;
+    
+  }
+
+  .history-header button{
+    margin-top: 1rem;
+    margin-left: 0;
   }
   
 }

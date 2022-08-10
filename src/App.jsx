@@ -20,7 +20,7 @@ function App() {
     e.preventDefault();
 
     const response = await fetch(
-      `${api.base}${city}&appid=${api.key}&units=metric`
+      `${api.base}${city.trim()}&appid=${api.key}&units=metric`
     );
     const data = await response.json();
     if (response.status === 404) {

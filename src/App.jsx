@@ -1,12 +1,12 @@
 import { useState } from "react";
 import moment from "moment";
 import "./App.css";
-import dotenv from 'dotenv'
+import dotenv from "dotenv";
 
 function App() {
   const api = {
     base: "https://api.openweathermap.org/data/2.5/weather?q=",
-    key: "YOUR_API_KEY",
+    key: "6ab20bfe870da3d43de21369ce69753b",
   };
 
   const [city, setCity] = useState("");
@@ -27,11 +27,21 @@ function App() {
       setError({ status: true, message: "City not Found" });
     } else {
       setError({ status: false, message: "" });
+      if (localStorage.getItem("data") === null) {
+        localStorage.setItem("data", "[]");
+      }
+      let dataArr = JSON.parse(localStorage.getItem("data"));
+      dataArr.push(data);
+      setWeather(data);
+      localStorage.setItem("data", JSON.stringify(dataArr));
     }
-    setWeather(data);
 
     setCity("");
   };
+
+  const searchHistory = localStorage.getItem("data")
+    ? JSON.parse(localStorage.getItem("data")).reverse()
+    : [];
 
   return (
     <div className="App">
@@ -73,6 +83,15 @@ function App() {
             <h4>Humidity: {weather?.main?.humidity}%</h4>
             <h4>Wind Speed: {weather?.wind?.speed} km/h</h4>
           </div>
+        </div>
+        <h2 className="history-heading">Search History</h2>
+        <div className="search-history">
+          {searchHistory.map((item, index) => (
+            <div className="history-item" key={index}>
+              <h3>{item?.name}, {item?.sys?.country}</h3>
+              <h4>{Math.round(item?.main?.temp)} &deg;C</h4>
+            </div>
+          ))}
         </div>
       </section>
     </div>

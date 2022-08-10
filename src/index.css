@@ -16,7 +16,7 @@
 body {
   margin: 0;
   color: #fff;
-  height: 100vh;
+
   background-image: linear-gradient(to right top, #84b0f2, #6dc6e8, #8ad4d4, #b7dcc8, #dde3d0);
 }
 
@@ -146,6 +146,30 @@ button:focus-visible {
   text-transform: capitalize;
 }
 
+.search-history{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: space-between;
+  padding: 4rem;
+  
+}
+
+.history-heading{
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #fff;
+  margin-top: 3rem;
+}
+
+.history-item{
+  background:rgba(0, 0, 0, 0.3);
+  border-radius: .5rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+
 @media screen and (max-width: 768px) {
   .weather-info{
     width: 90%;
@@ -162,6 +186,19 @@ button:focus-visible {
     flex-direction: column;
     align-items: center;
     line-height: 2rem;
+  }
+
+  .search-history{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin-top: 3rem;
+  }
+
+  .history-item{
+    width: 80%;
   }
   
 }

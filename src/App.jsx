@@ -6,7 +6,7 @@ import dotenv from 'dotenv'
 function App() {
   const api = {
     base: "https://api.openweathermap.org/data/2.5/weather?q=",
-    key: "6ab20bfe870da3d43de21369ce69753b",
+    key: "YOUR_API_KEY",
   };
 
   const [city, setCity] = useState("");

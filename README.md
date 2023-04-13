@@ -1,4 +1,4 @@
 # weatherapp
 
-DEMO: <a target="_blank" href="https://cityweatherreactapp.netlify.app/">Click here</a>
+DEMO: <a href="https://cityweatherreactapp.netlify.app/" target="_blank" rel="noopener noreferrer">Click here</a>
 
